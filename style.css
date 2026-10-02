@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1d1f27, #282a36);
+    color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* MENU ESTILO */
+.menu-container {
+    background: #32344a;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    width: 380px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.menu-container h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #f1fa8c;
+}
+
+.menu-container p {
+    font-size: 0.9rem;
+    color: #8be9fd;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: #ff79c6;
+    font-weight: bold;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #44475a;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* BOTÕES */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.primary { background: #50fa7b; color: #282a36; }
+.btn.secondary { background: #8be9fd; color: #282a36; }
+.btn.danger { background: #ff5555; color: #fff; }
+
+/* TELA DE JOGO */
+#game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 570px;
+    max-width: 95%;
+    background: #282a36;
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
+    font-size: 0.85rem;
+}
+
+#game-header .btn {
+    width: auto;
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+}
+
+#math-challenge-bar {
+    width: 570px;
+    max-width: 95%;
+    background: #44475a;
+    text-align: center;
+    padding: 8px;
+    font-size: 1.1rem;
+    color: #f1fa8c;
+    border-bottom: 2px solid #6272a4;
+}
+
+#canvas-container {
+    background: #000;
+    border: 3px solid #6272a4;
+    border-top: none;
+    width: 570px;
+    max-width: 95%;
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    background-color: #000;
+    display: block;
+}
+
+/* CONTROLES TÁTEIS (MOBILE) */
+#mobile-controls {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ctrl-row {
+    display: flex;
+    gap: 40px;
+}
+
+.ctrl-btn {
+    background: #6272a4;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    #mobile-controls {
+        display: flex;
+    }
+}
+
+/* MODAIS */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: #32344a;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #ff79c6;
+}

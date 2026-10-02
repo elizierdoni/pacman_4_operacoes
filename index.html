@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math-Man: As 4 Operações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MENU INICIAL -->
+    <div id="main-menu" class="screen">
+        <div class="menu-container">
+            <h1>🟡 Math-Man 🧮</h1>
+            <p>O Jogo das 4 Operações do Ensino Fundamental</p>
+            
+            <div class="input-group">
+                <label for="student-name">Nome do Estudante:</label>
+                <input type="text" id="student-name" placeholder="Digite seu nome..." value="Estudante">
+            </div>
+
+            <div class="input-group">
+                <label for="operation-select">Escolha a Operação:</label>
+                <select id="operation-select">
+                    <option value="all">Todas as Operações (+, -, ×, ÷)</option>
+                    <option value="addition">Adição (+)</option>
+                    <option value="subtraction">Subtração (-)</option>
+                    <option value="multiplication">Multiplicação (×)</option>
+                    <option value="division">Divisão (÷)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="mode-select">Modo de Jogo:</label>
+                <select id="mode-select">
+                    <option value="time">Com Tempo (Desafio)</option>
+                    <option value="training">Treinamento (Sem Pressão)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="difficulty-select">Nível de Dificuldade:</label>
+                <select id="difficulty-select">
+                    <option value="easy">Fácil (Números até 10)</option>
+                    <option value="medium" selected>Médio (Números até 50)</option>
+                    <option value="hard">Difícil (Números até 100)</option>
+                    <option value="insane">Insano (Velocidade e Desafio Máximo)</option>
+                </select>
+            </div>
+
+            <button id="btn-start" class="btn primary">🎮 Iniciar Jogo</button>
+        </div>
+    </div>
+
+    <!-- TELA DO JOGO -->
+    <div id="game-screen" class="screen hidden">
+        <header id="game-header">
+            <div class="info-box">👤 <span id="display-name">Estudante</span></div>
+            <div class="info-box">⭐ Pontos: <span id="display-score">0</span></div>
+            <div class="info-box">❤️ Vidas: <span id="display-lives">❤️❤❤️</span></div>
+            <div class="info-box" id="timer-box">⏱️ Tempo: <span id="display-timer">60</span>s</div>
+            <button id="btn-pause" class="btn secondary">⏸ Pausa</button>
+        </header>
+
+        <div id="math-challenge-bar">
+            <h2>Resolva: <span id="math-question">5 + 3 = ?</span></h2>
+        </div>
+
+        <div id="canvas-container">
+            <canvas id="gameCanvas" width="570" height="420"></canvas>
+        </div>
+
+        <!-- Controles Móveis / Visuais -->
+        <div id="mobile-controls">
+            <button class="ctrl-btn" data-dir="UP">⬆️</button>
+            <div class="ctrl-row">
+                <button class="ctrl-btn" data-dir="LEFT">⬅️</button>
+                <button class="ctrl-btn" data-dir="DOWN">⬇️</button>
+                <button class="ctrl-btn" data-dir="RIGHT">➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE PAUSA -->
+    <div id="pause-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Jogo Pausado ⏸️</h2>
+            <button id="btn-resume" class="btn primary">▶️ Continuar</button>
+            <button id="btn-restart" class="btn secondary">🔄 Reiniciar</button>
+            <button id="btn-quit" class="btn danger">🚪 Sair para o Menu</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE FIM DE JOGO -->
+    <div id="gameover-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="gameover-title">Fim de Jogo!</h2>
+            <p>Sua pontuação final: <span id="final-score">0</span></p>
+            <button id="btn-play-again" class="btn primary">🔁 Jogar Novamente</button>
+            <button id="btn-menu-back" class="btn secondary">🏠 Voltar ao Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
